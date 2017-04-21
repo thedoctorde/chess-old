@@ -63,7 +63,8 @@ gulp.task('browserSync', function () {
         notify: false,
         server: {
             baseDir: tempFolder,
-            directory: true
+            directory: true,
+            index: "index.html"
         },
         open: true
 
@@ -71,7 +72,7 @@ gulp.task('browserSync', function () {
 });
 
 gulp.task('images', function () {
-    return gulp.src("src/img/**/*.{png,jpg,gif,svg}")
+    return gulp.src('src/img/**/*.{png,jpg,gif,svg}')
         .pipe(gulp.dest(tempFolder + "/img"));
 });
 
@@ -79,6 +80,7 @@ gulp.task('default', ['build'], function () {
     gulp.watch('src/sass/**/*.scss', ['styles']);
     gulp.watch('src/*.html', ['html']);
     gulp.watch('src/**/*.js', ['js']);
+    gulp.watch('src/img/**/*.{png,jpg,gif,svg}', ['images']);
     gulp.watch('src/sass/styles.scss', ['styles-reload']);
 });
 

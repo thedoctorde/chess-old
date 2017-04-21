@@ -1,0 +1,11 @@
+
+
+//COLORS
+$darkCellColor :  #82755c;
+$lightCellColor : #f0e6b2;
+$possibleMoveCellColor : #40B451;
+
+
+
+//SIZES
+$cellSize : 100px;
